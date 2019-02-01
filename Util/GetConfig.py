@@ -25,8 +25,9 @@ class GetConfig(object):
 
     def __init__(self):
         self.pwd = os.path.split(os.path.realpath(__file__))[0]
-        self.config_path = os.path.join(os.path.split(self.pwd)[0], 'Config.ini')
-        self.config_file = ConfigParse(defaults={"password": None})
+        self.config_path = os.path.join(
+            os.path.split(self.pwd)[0], 'Config.ini')
+        self.config_file = ConfigParse(defaults={"password": ""})
         self.config_file.read(self.config_path)
 
     @LazyProperty
